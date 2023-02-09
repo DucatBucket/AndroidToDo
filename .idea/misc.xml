@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/2234383/Documents/AndroidPractice/ToDoList/app/src/main/res/layout/activity_main.xml" value="0.2803442028985507" />
+        <entry key="..\:/Users/2234383/Documents/AndroidPractice/ToDoList/app/src/main/res/layout/fragment_create_task_sheet.xml" value="0.33" />
+        <entry key="..\:/Users/2234383/Documents/AndroidPractice/ToDoList/app/src/main/res/layout/task_cell.xml" value="0.25" />
+        <entry key="..\:/Users/2234383/Documents/AndroidPractice/ToDoList/app/src/main/res/layout/task_item_cell.xml" value="0.17135416666666667" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17_PREVIEW" project-jdk-name="corretto-17" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
