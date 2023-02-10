@@ -36,7 +36,7 @@ class CreateTaskSheet(var task: Task?) : BottomSheetDialogFragment() {
             }
             if(task!!.dueDate != null){
                 dueDate = task!!.dueDate!!
-                updateTimeButtonText()
+                updateDateButtonText()
             }
         }
         else{
@@ -74,11 +74,12 @@ class CreateTaskSheet(var task: Task?) : BottomSheetDialogFragment() {
         if(dueDate == null){
             dueDate = LocalDate.now()
         }
+
         val listener = DatePickerDialog.OnDateSetListener{ _, selectedYear, selectedMonth, selectedDay ->
-            dueDate = LocalDate.of(selectedYear, selectedMonth, selectedDay)
+            dueDate = LocalDate.of(selectedYear, selectedMonth + 1, selectedDay)
             updateDateButtonText()
         }
-        val dialog = activity?.let { DatePickerDialog(it, listener, dueDate!!.year, dueDate!!.monthValue, dueDate!!.dayOfMonth) }
+        val dialog = activity?.let { DatePickerDialog(it, listener, dueDate!!.year, dueDate!!.monthValue - 1, dueDate!!.dayOfMonth) }
         dialog!!.setTitle("Date Due")
         dialog.show()
     }
@@ -99,8 +100,7 @@ class CreateTaskSheet(var task: Task?) : BottomSheetDialogFragment() {
     private fun saveAction(){
         val name = binding.name.text.toString()
 
-        if(name.isEmpty()) {
-            dismiss()
+        if(name.isEmpty() || dueTime == null || dueDate == null) {
             return
         }
 

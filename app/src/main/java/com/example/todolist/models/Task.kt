@@ -13,8 +13,8 @@ import java.util.*
 @Entity
 data class Task(
     @ColumnInfo(name = "name") var name: String,
-    @ColumnInfo(name = "due_time") var dueTime: LocalTime?,
-    @ColumnInfo(name = "due_date") var dueDate: LocalDate?,
+    @ColumnInfo(name = "due_time") var dueTime: LocalTime?, //Stored as epoch time in a long, see Converters
+    @ColumnInfo(name = "due_date") var dueDate: LocalDate?, //Stored as seconds of day in an int, see Converters
     @ColumnInfo(name = "complete") var complete: Boolean = false,
     @PrimaryKey var id: UUID = UUID.randomUUID()
     ) {

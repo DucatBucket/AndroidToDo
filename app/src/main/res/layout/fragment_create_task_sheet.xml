@@ -31,7 +31,7 @@
                 android:layout_height="match_parent"
                 android:id="@+id/name"
                 android:hint="@string/task_name"
-                android:maxLength="56"/>
+                android:maxLength="60"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -66,8 +66,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginHorizontal="20dp"
-            android:backgroundTint="?attr/colorPrimary"
-            android:textColor="?colorOnPrimary"
+            android:backgroundTint="@color/complete_green"
+            android:textColor="@color/black"
             android:text="@string/save_btn_text"/>
 
 </LinearLayout>

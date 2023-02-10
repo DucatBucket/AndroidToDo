@@ -21,7 +21,7 @@ class TaskViewHolder(
 
         if(task.complete){
             binding.name.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
-            binding.taskCellContainer.setCardBackgroundColor(ContextCompat.getColor(context, R.color.complete_green))
+            binding.taskCellContainer.setCardBackgroundColor(ContextCompat.getColor(context, R.color.primary_orange))
         }
         else if(task.dueDate != null){
             if(task.dueDate!!.isBefore(LocalDate.now())){

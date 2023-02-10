@@ -5,7 +5,8 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        tools:context=".MainActivity"
+        android:background="?attr/colorPrimary">
     <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -17,12 +18,12 @@
             android:layout_height="wrap_content"
             android:text="Add Task"
             android:id="@+id/create_task_button"
-            android:backgroundTint="?attr/colorPrimary"
-            android:textColor="?colorOnPrimary"
+            android:backgroundTint="@color/complete_green"
+            android:textColor="@color/black"
             android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
             android:padding="5dp"
             android:layout_margin="20dp"
             app:icon="@drawable/ic_baseline_add_24"
-            app:iconTint="?colorOnPrimary"/>
+            app:iconTint="@color/black"/>
 </RelativeLayout>
