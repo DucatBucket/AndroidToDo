@@ -23,6 +23,10 @@ class TaskViewModel(private val repository: TaskRepository): ViewModel() {
         task.complete = !task.complete
         repository.updateTask(task)
     }
+
+    fun deleteTask(task: Task) = viewModelScope.launch{
+        repository.deleteTask(task)
+    }
 }
 
 class TaskModelFactory(private val repository: TaskRepository): ViewModelProvider.Factory{

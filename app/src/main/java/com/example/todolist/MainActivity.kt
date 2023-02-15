@@ -1,14 +1,11 @@
 package com.example.todolist
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
-import androidx.lifecycle.ViewModelProvider
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.room.Room
-import com.example.todolist.daos.TaskDao
-import com.example.todolist.databases.TaskDatabase
 import com.example.todolist.databinding.ActivityMainBinding
+import com.example.todolist.listeners.TaskClickListener
 import com.example.todolist.models.Task
 import com.example.todolist.models.TaskModelFactory
 import com.example.todolist.models.TaskViewModel
@@ -22,7 +19,7 @@ class MainActivity : AppCompatActivity(), TaskClickListener {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.createTaskButton.setOnClickListener{
+        binding.createTaskButton.setOnClickListener {
             CreateTaskSheet(null).show(supportFragmentManager, "createTaskTag")
         }
 
@@ -31,10 +28,10 @@ class MainActivity : AppCompatActivity(), TaskClickListener {
 
     private fun setRecyclerView() {
         val mainActivity = this
-        taskViewModel.taskItems.observe(this){
-            binding.todoListRecyclerView.apply{
+        taskViewModel.taskItems.observe(this) {
+            binding.todoListRecyclerView.apply {
                 layoutManager = LinearLayoutManager(applicationContext)
-                adapter = TaskAdapter(it,mainActivity)
+                adapter = TaskAdapter(it, mainActivity)
             }
         }
     }
@@ -47,7 +44,7 @@ class MainActivity : AppCompatActivity(), TaskClickListener {
         taskViewModel.setComplete(task)
     }
 
-    private fun taskListSetUp(taskList:ArrayList<Task>,taskDao: TaskDao){
-
+    override fun deleteTask(task: Task) {
+        taskViewModel.deleteTask(task)
     }
 }

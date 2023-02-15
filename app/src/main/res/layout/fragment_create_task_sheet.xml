@@ -5,7 +5,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context=".CreateTaskSheet">
+        tools:context=".CreateTaskSheet" xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
     <TextView
@@ -31,7 +31,9 @@
                 android:layout_height="match_parent"
                 android:id="@+id/name"
                 android:hint="@string/task_name"
-                android:maxLength="60"/>
+                android:singleLine="true"
+                android:imeOptions="actionDone"
+                android:maxLength="50"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 

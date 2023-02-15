@@ -30,11 +30,28 @@
                     android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
-                <TextView
-                        style="@style/TextAppearance.AppCompat.Title"
+                <LinearLayout
+                        android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:id="@+id/name"/>
+                        android:layout_height="wrap_content">
+                    <TextView
+                            style="@style/TextAppearance.AppCompat.Title"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:id="@+id/name"
+                            android:layout_weight="1"
+                            android:layout_gravity="start"/>
+                    <ImageButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            app:srcCompat="@drawable/ic_baseline_delete_24"
+                            android:background="?android:attr/selectableItemBackground"
+                            android:id="@+id/deleteButton"
+
+                            android:layout_gravity="end" />
+
+                </LinearLayout>
                 <LinearLayout
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
