@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity(), TaskClickListener {
     private val taskViewModel: TaskViewModel by viewModels {
         TaskModelFactory((application as TaskApp).repository)
     }
+    //Test comment for git
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
